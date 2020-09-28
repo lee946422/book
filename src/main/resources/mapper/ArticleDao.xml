@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lei.book.dao.ArticleDao">
+  <resultMap id="BaseResultMap" type="cn.lei.book.pojo.Article">
+    <id column="article_id" jdbcType="VARCHAR" property="articleId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="article_title" jdbcType="VARCHAR" property="articleTitle" />
+    <result column="article_content" jdbcType="VARCHAR" property="articleContent" />
+    <result column="article_views" jdbcType="BIGINT" property="articleViews" />
+    <result column="article_comment_count" jdbcType="BIGINT" property="articleCommentCount" />
+    <result column="article_date" jdbcType="TIMESTAMP" property="articleDate" />
+    <result column="article_like_count" jdbcType="BIGINT" property="articleLikeCount" />
+    <result column="article_abbreviation" jdbcType="BIGINT" property="articleAbbreviation" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    article_id, user_id, article_title, article_content, article_views, article_comment_count, 
+    article_date, article_like_count,article_abbreviation
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from article
+    where article_id = #{articleId,jdbcType=VARCHAR}
+  </select>
+    <select id="selectAll" resultType="cn.lei.book.pojo.Article">
+      select
+        <include refid="Base_Column_List" />
+      from  article
+      order by
+        article_date desc
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from article
+    where article_id = #{articleId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="article_id" keyProperty="articleId" parameterType="cn.lei.book.pojo.Article" useGeneratedKeys="true">
+    insert into article (user_id, article_title, article_content, 
+      article_views, article_comment_count, article_date, 
+      article_like_count,article_abbreviation)
+    values (#{userId,jdbcType=BIGINT}, #{articleTitle,jdbcType=VARCHAR}, #{articleContent,jdbcType=VARCHAR}, 
+      #{articleViews,jdbcType=BIGINT}, #{articleCommentCount,jdbcType=BIGINT}, #{articleDate,jdbcType=TIMESTAMP}, 
+      #{articleLikeCount,jdbcType=BIGINT},#{articleAbbreviation})
+  </insert>
+  <insert id="insertSelective" keyColumn="article_id" keyProperty="articleId" parameterType="cn.lei.book.pojo.Article" useGeneratedKeys="true">
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="articleTitle != null">
+        article_title,
+      </if>
+      <if test="articleContent != null">
+        article_content,
+      </if>
+      <if test="articleViews != null">
+        article_views,
+      </if>
+      <if test="articleCommentCount != null">
+        article_comment_count,
+      </if>
+      <if test="articleDate != null">
+        article_date,
+      </if>
+      <if test="articleLikeCount != null">
+        article_like_count,
+      </if>
+      <if test="articleAbbreviation != null">
+          article_abbreviation,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="articleTitle != null">
+        #{articleTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="articleContent != null">
+        #{articleContent,jdbcType=VARCHAR},
+      </if>
+      <if test="articleViews != null">
+        #{articleViews,jdbcType=BIGINT},
+      </if>
+      <if test="articleCommentCount != null">
+        #{articleCommentCount,jdbcType=BIGINT},
+      </if>
+      <if test="articleDate != null">
+        #{articleDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="articleLikeCount != null">
+        #{articleLikeCount,jdbcType=BIGINT},
+      </if>
+        <if test="articleAbbreviation != null">
+            #{articleAbbreviation},
+        </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.lei.book.pojo.Article">
+    update article
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="articleTitle != null">
+        article_title = #{articleTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="articleContent != null">
+        article_content = #{articleContent,jdbcType=VARCHAR},
+      </if>
+      <if test="articleViews != null">
+        article_views = #{articleViews,jdbcType=BIGINT},
+      </if>
+      <if test="articleCommentCount != null">
+        article_comment_count = #{articleCommentCount,jdbcType=BIGINT},
+      </if>
+      <if test="articleDate != null">
+        article_date = #{articleDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="articleLikeCount != null">
+        article_like_count = #{articleLikeCount,jdbcType=BIGINT},
+      </if>
+        <if test="articleAbbreviation != null">
+            article_abbreviation = #{articleAbbreviation},
+        </if>
+    </set>
+    where article_id = #{articleId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.lei.book.pojo.Article">
+    update article
+    set user_id = #{userId,jdbcType=BIGINT},
+      article_title = #{articleTitle,jdbcType=VARCHAR},
+      article_content = #{articleContent,jdbcType=VARCHAR},
+      article_views = #{articleViews,jdbcType=BIGINT},
+      article_comment_count = #{articleCommentCount,jdbcType=BIGINT},
+      article_date = #{articleDate,jdbcType=TIMESTAMP},
+      article_like_count = #{articleLikeCount,jdbcType=BIGINT}
+       article_abbreviation = #{articleAbbreviation}
+    where article_id = #{articleId,jdbcType=VARCHAR}
+  </update>
+</mapper>

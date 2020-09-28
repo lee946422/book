@@ -1,0 +1,250 @@
+
+.el-header {
+    /*background-color: #3F4257;*/
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.nav-list {
+    height: 70px;
+    width: 100%;
+    background-color: #1fc8db;
+    background-image: linear-gradient(#003366 1%, black 50%);
+    position: fixed;
+    z-index: 3;
+    top: 0;
+}
+
+
+.el-main {
+    margin-top: 30px;
+    height: 100%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+/*轮播图样式控制*/
+.polling {
+    margin: 2px auto;
+    /*border: black 1px solid;*/
+    box-shadow: 0 0 2px cyan;
+    border-radius: 5px;
+}
+
+.el-carousel__item img {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*左边内容部分*/
+.main-left {
+    float: left;
+    width: 15%;
+    padding-bottom: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+
+.main-left-top {
+    position: fixed;
+    margin-left: -2%;
+    width: inherit;
+    text-align: center;
+    background-color: #82E0F0;
+    box-shadow: 0 0 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 5px 3px;
+    transition: transform 0.3s linear;
+}
+
+.main-left-top:hover {
+    text-align: center;
+    background-color: #82E0F0;
+    box-shadow: 0 0 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 5px 3px;
+    transform: scale(1.05, 1.05);
+}
+
+.user-infor span {
+    height: 30px;
+    display: block;
+    text-align: center;
+    border-bottom: 3px darkcyan solid;
+    line-height: 30px;
+}
+
+/*头像的样式*/
+.head-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px white;
+}
+
+/*右内容部分*/
+.main-right {
+    float: right;
+    width: 17%;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+/*中间内容区域*/
+.main-center {
+    width: 65%;
+    float: left;
+    margin-left: 1%;
+    height: 100%;
+}
+
+.article_area {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    /*background-color: lightseagreen;*/
+
+}
+
+/*所有class为nav-list的div中的ul样式*/
+div.nav-list ul {
+    position: relative;
+    list-style: none; /* 去掉ul前面的符号 */
+    margin: 0; /* 与外界元素的距离为0 */
+    padding: 0px; /* 与内部元素的距离为0 */
+    width: auto; /* 宽度根据元素内容调整 */
+}
+
+/* 所有class为nav-list的div中的ul中的li样式 */
+div.nav-list ul li {
+    float: left; /* 向左漂移，将竖排变为横排 */
+}
+
+/* 所有class为nav-list的div中的ul中的a样式(包括尚未点击的和点击过的样式) */
+div.nav-list ul li a, div.nav-list ul li a:visited {
+    /*background-color: #465c71; !* 背景色 *!*/
+    /*border: 1px #4e667d solid; !* 边框 *!*/
+    color: #dde4ec; /* 文字颜色 */
+    display: block; /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+    line-height: 70px; /* 行高 */
+    padding: 0px 20px; /* 内部填充的距离 */
+    text-decoration: none; /* 不显示超链接下划线 */
+    white-space: nowrap; /* 对于文本内的空白处，不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。 */
+}
+
+/* 所有class为nav-list的div中的ul中的a样式(鼠标移动到元素中的样式) */
+div.nav-list ul li a:hover {
+    /*background-color:lightseagreen; !* 背景色 *!*/
+    color: lightseagreen; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+
+/* 所有class为nav-list的div中的ul中的a样式(鼠标点击元素时的样式) */
+div.nav-list ul li a:active {
+    background-color: #465c71; /* 背景色 */
+    color: #cfdbe6; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+
+.goTop {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 2);
+    text-align: center;
+    border-radius: 50px;
+    line-height: 40px;
+    color: #1989fa;
+}
+
+.main-right-top, .main-right-bottown {
+    text-align: center;
+    background-color: #82E0F0;
+    box-shadow: 0 0 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 5px 3px;
+    overflow: visible;
+}
+
+div.main-right ul {
+    margin-left: 0;
+    padding: 0;
+    /*margin-right:-20px;*/
+}
+
+div.main-right ul li {
+    transition: transform 0.5s linear;
+    list-style: none;
+    line-height: 35px;
+    background-color: #21cbf0;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: 0 0 5px inset white;
+    font-size: 5px;
+}
+
+div.main-right ul li:hover {
+    transform: scale(1.1, 1.2);
+    list-style: none;
+    line-height: 35px;
+    box-shadow: 0 0 5px inset white;
+    border: 1px darkcyan solid;
+    margin: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+/*正文*/
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+.list-item {
+    width: 100%;
+    list-style: none;
+    height: 200px;
+    background-color: #5cc3f0;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.list-item:hover {
+    background-color: #02b6f0;
+    /*border: 1px solid black;*/
+    box-shadow: 0 0 2px 2px #f027d6;
+    transform: scale(0.99,0.99);
+
+}
